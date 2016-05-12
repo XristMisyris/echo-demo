@@ -19,8 +19,9 @@ Vue.component('home', {
      * Prepare the component.
      */
     ready() {
-        this.getTasks();
         this.listen();
+
+        this.getTasks();
     },
 
 
