@@ -37,6 +37,6 @@ class TaskDeleted extends Event implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return ['teams.'.$this->teamId.'.tasks'];
+        return ['private-teams.'.$this->teamId.'.tasks'];
     }
 }

@@ -18,6 +18,13 @@ class BroadcastServiceProvider extends ServiceProvider
         Broadcast::route(['middleware' => ['web']]);
 
         /**
+         * Authenticate the team task list channel.
+         */
+        Broadcast::channel('teams.*.tasks', function ($user, $teamId) {
+            return ! is_null($user->teams->find($teamId));
+        });
+
+        /**
          * Authenticate the task channel.
          */
         Broadcast::channel('task.*', function ($user, $taskId) {

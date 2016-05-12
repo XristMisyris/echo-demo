@@ -34,6 +34,6 @@ class TaskCreated extends Event implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return ['teams.'.$this->task->team_id.'.tasks'];
+        return ['private-teams.'.$this->task->team_id.'.tasks'];
     }
 }

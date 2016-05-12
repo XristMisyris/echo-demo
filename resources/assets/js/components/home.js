@@ -30,12 +30,12 @@ Vue.component('home', {
          * Listen to the Echo channels.
          */
         listen() {
-            echo.channel('teams.' + this.currentTeam.id + '.tasks')
-                .listen('TaskCreated', message => {
-                    this.tasks.push(message.task);
+            echo.private('teams.' + this.currentTeam.id + '.tasks')
+                .listen('TaskCreated', event => {
+                    this.tasks.push(event.task);
                 })
-                .listen('TaskDeleted', message => {
-                    this.removeTaskFromData(message.taskId);
+                .listen('TaskDeleted', event => {
+                    this.removeTaskFromData(event.taskId);
                 });
         },
 
