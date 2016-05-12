@@ -1,0 +1,9 @@
+/vendor
+/node_modules
+/public/storage
+/spark
+/public/js/app.js
+/public/js/app.js.map
+Homestead.yaml
+Homestead.json
+.env
