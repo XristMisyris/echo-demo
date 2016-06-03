@@ -21,6 +21,7 @@ class TaskController extends Controller
      */
     public function all(Request $request, Team $team)
     {
+        info($team->id);
         abort_unless($request->user()->onTeam($team), 403);
 
         return $team->tasks()->with('creator')->get();

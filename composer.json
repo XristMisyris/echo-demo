@@ -9,7 +9,7 @@
     "type": "project",
     "require": {
         "php": ">=5.5.9",
-        "laravel/framework": "5.3.*@dev",
+        "laravel/framework": "5.3.*",
         "laravel/cashier": "~6.0",
         "laravel/spark": "*@dev",
         "pusher/pusher-php-server": "^2.3",
