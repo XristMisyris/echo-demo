@@ -13,7 +13,7 @@
 
 Route::group([
     'prefix' => 'api',
-    'middleware' => 'auth:api'
+    'middleware' => ['api', 'auth:api']
 ], function () {
     /**
      * Task Routes...

@@ -30,10 +30,12 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Laravel\Spark\Http\Middleware\CreateFreshApiToken::class,
+            \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
 
         'api' => [
             'throttle:60,1',
+            'bindings',
         ],
     ];
 
@@ -47,6 +49,7 @@ class Kernel extends HttpKernel
     protected $routeMiddleware = [
         'auth' => \App\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
+        'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
         'dev' => \Laravel\Spark\Http\Middleware\VerifyUserIsDeveloper::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'hasTeam' => \Laravel\Spark\Http\Middleware\VerifyUserHasTeam::class,

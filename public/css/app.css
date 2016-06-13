@@ -7174,6 +7174,9 @@ fieldset[disabled] .btn-danger-outline.active {
   border-bottom: 0;
   margin-bottom: 0;
   height: 70px;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
 }
 #modal-notifications .modal-header .btn-group {
   padding-top: 4px;
@@ -7199,6 +7202,12 @@ fieldset[disabled] .btn-danger-outline.active {
   background: #fff;
   border-top: 1px dashed rgba(0, 0, 0, 0.1);
   width: 350px;
+}
+#modal-notifications .notification-container:first-child {
+  padding-top: 70px;
+}
+#modal-notifications .notification-container:last-child {
+  padding-bottom: 88px;
 }
 #modal-notifications .notification:not(:first-child) {
   padding-top: 25px;

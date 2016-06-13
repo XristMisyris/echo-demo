@@ -20,14 +20,14 @@ class BroadcastServiceProvider extends ServiceProvider
         /**
          * Authenticate the team task list channel.
          */
-        Broadcast::channel('teams.*.tasks', function ($user, $teamId) {
+        Broadcast::auth('teams.*.tasks', function ($user, $teamId) {
             return ! is_null($user->teams->find($teamId));
         });
 
         /**
          * Authenticate the task channel.
          */
-        Broadcast::channel('task.*', function ($user, $taskId) {
+        Broadcast::auth('task.*', function ($user, $taskId) {
             $task = Task::find($taskId);
 
             if ($task && $user->onTeam($task->team)) {

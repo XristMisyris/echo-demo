@@ -10,7 +10,7 @@ window.echo = new Echo('9bd46d06e1553cc746f0');
 Vue.http.interceptors.push(function () {
     return {
         request(request) {
-            request.headers['X-Socket-Id'] = echo.pusher.connection.socket_id;
+            request.headers['X-Socket-Id'] = echo.socketId();
             return request;
         }
     }
